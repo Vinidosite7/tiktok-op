@@ -60,7 +60,7 @@ export default function LancamentosPage() {
       isOwner
         ? supabase.from('operadores').select('*').eq('owner_id', user.id).eq('ativo', true)
         : supabase.from('operadores').select('*').eq('id', operadorId),
-      supabase.from('periodos').select('id, nome').order('data_inicio', { ascending: false }).limit(10),
+      supabase.from('periodos').select('*').order('data_inicio', { ascending: false }).limit(10),
     ])
 
     setAds(adsList || [])
