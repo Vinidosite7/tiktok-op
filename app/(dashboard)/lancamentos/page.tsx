@@ -58,8 +58,8 @@ export default function LancamentosPage() {
         ? supabase.from('lancamentos_receita').select('*, operador:operadores(nome)').eq('owner_id', user.id).order('data', { ascending: false }).limit(50)
         : supabase.from('lancamentos_receita').select('*, operador:operadores(nome)').eq('operador_id', operadorId).order('data', { ascending: false }).limit(50),
       isOwner
-        ? supabase.from('operadores').select('id, nome').eq('owner_id', user.id).eq('ativo', true)
-        : supabase.from('operadores').select('id, nome').eq('id', operadorId),
+        ? supabase.from('operadores').select('*').eq('owner_id', user.id).eq('ativo', true)
+        : supabase.from('operadores').select('*').eq('id', operadorId),
       supabase.from('periodos').select('id, nome').order('data_inicio', { ascending: false }).limit(10),
     ])
 
