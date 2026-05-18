@@ -17,6 +17,7 @@ const OWNER_NAV = [
   { href: '/lancamentos', label: 'Lançamentos', icon: TrendingUp      },
   { href: '/custos',      label: 'Meus Custos', icon: DollarSign      },
   { href: '/relatorio',   label: 'Relatório',   icon: BarChart3       },
+  { href: '/bc',          label: 'Business Centers', icon: Zap        },
 ]
 
 const OPERADOR_NAV = [
